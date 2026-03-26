@@ -46,9 +46,110 @@ Deploy the website.
 Upload to GitHub Pages for free hosting.
 
 ## PROGRAM
+```
+### calculator.js:
+import React, { useState } from 'react';
+import './index.css';
 
+const Calculator = () => {
+  const [input, setInput] = useState('');
 
+  const handleClick = (value) => {
+    setInput((prev) => prev + value);
+  };
+
+  const calculate = () => {
+    try {
+      // eslint-disable-next-line no-eval
+      setInput(eval(input).toString());
+    } catch {
+      setInput('Error');
+    }
+  };
+
+  const clear = () => {
+    setInput('');
+  };
+
+  return (
+    <div className="calculator">
+      <h2>Simple Calculator</h2>
+      <input type="text" value={input} readOnly />
+      <div className="buttons">
+        {'1234567890+-*/.'.split('').map((char) => (
+          <button key={char} onClick={() => handleClick(char)}>{char}</button>
+        ))}
+        <button onClick={calculate}>=</button>
+        <button onClick={clear}>C</button>
+      </div>
+      <footer>
+        <p>Designed by TARANIKKA A| Reg No: 212223220115</p>
+      </footer>
+    </div>
+  );
+};
+
+export default Calculator;
+```
+```
+## app.js:
+
+import React from 'react';
+import Calculator from './Calculator';
+
+function App() {
+  return (
+    <div className="App">
+      <Calculator />
+    </div>
+  );
+}
+
+export default App;
+```
+```
+## index.css:
+body {
+  font-family: Arial, sans-serif;
+  background-color: #fafafa;
+  text-align: center;
+}
+
+.calculator {
+  background: rgb(251, 140, 140);
+  padding: 20px;
+  margin: 50px auto;
+  border-radius: 12px;
+  max-width: 300px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.buttons button {
+  width: 60px;
+  height: 40px;
+  margin: 5px;
+  font-size: 1.1rem;
+  border: none;
+  background: #333;
+  color: white;
+  border-radius: 5px;
+}
+
+footer {
+  margin-top: 20px;
+  font-size: 0.9rem;
+  color: gray;
+}
+```
 ## OUTPUT
+![Uploading 4th mwb.png…]()
 
 
 ## RESULT
