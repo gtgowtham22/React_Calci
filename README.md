@@ -149,7 +149,8 @@ footer {
 }
 ```
 ## OUTPUT
-![Uploading 4th mwb.png…]()
+<img width="1918" height="1017" alt="4th mwb" src="https://github.com/user-attachments/assets/ffaf88e1-967e-4c87-ac69-28ffc543f86e" />
+
 
 
 ## RESULT
